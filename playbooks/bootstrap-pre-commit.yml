@@ -3,5 +3,5 @@
   hosts: all
   tasks:
     - name: Install pre-commit
-      ansible.builtin.shell: |
+      shell: |
         curl https://pre-commit.com/install-local.py | /usr/bin/python3 -

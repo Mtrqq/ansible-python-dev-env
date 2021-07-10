@@ -12,9 +12,9 @@
         autoremove: yes
 
     - name: Setup docker service
-      ansible.builtin.shell: |
+      shell: |
         sudo systemctl enable --now docker
 
     - name: Allow running as non-root user
-      ansible.builtin.shell: |
+      shell: |
         sudo usermod -aG docker ${USER}

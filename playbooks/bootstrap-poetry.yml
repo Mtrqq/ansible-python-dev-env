@@ -3,5 +3,5 @@
   hosts: all
   tasks:
     - name: Install poetry
-      ansible.builtin.shell: |
+      shell: |
         curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | /usr/bin/python3 -

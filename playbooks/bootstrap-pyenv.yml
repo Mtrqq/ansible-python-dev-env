@@ -28,7 +28,7 @@
         autoremove: yes
 
     - name: Setup pyenv
-      ansible.builtin.shell: |
+      shell: |
         HEADING="Pyenv exports"
         for rc_file in ~/.profile ~/.zshrc ~/.bashrc; do
           if test -f "$rc_file" && ! grep -q "$HEADING" "$rc_file"; then
