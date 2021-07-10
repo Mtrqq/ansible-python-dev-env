@@ -1,0 +1,15 @@
+echo "Setting up dev environment"
+
+sudo apt install git make -y
+
+FOLDER=/tmp/$(uuidgen)/
+mkdir -p $FOLDER
+cd $FOLDER
+git clone https://github.com/Mtrqq/ansible-python-dev-env.git ./src
+cd ./src && make install playbook
+cd /
+rm -rf $FOLDER
+
+
+echo "Done!" 
+
