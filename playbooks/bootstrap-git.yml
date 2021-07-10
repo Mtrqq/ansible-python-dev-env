@@ -9,6 +9,7 @@
         state: present
         autoclean: yes
         autoremove: yes
+        
     - name: Configure credentials helper
       shell: |
-        git config --global credentials.helper 'store --file ~/.git-credentials'
+        git config --global credentials.helper store

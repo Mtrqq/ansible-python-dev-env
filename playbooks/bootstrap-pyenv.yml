@@ -27,19 +27,20 @@
         autoclean: yes
         autoremove: yes
 
+    - name: Intall pyenv
+      shell: |
+        curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+
     - name: Setup pyenv
       shell: |
         HEADING="Pyenv exports"
         for rc_file in ~/.profile ~/.zshrc ~/.bashrc; do
           if test -f "$rc_file" && ! grep -q "$HEADING" "$rc_file"; then
-            echo '\n' >> "$rc_file"
             echo "#${HEADING}" >> "$rc_file"
-            curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
             echo 'export PYENV_ROOT="$HOME/.pyenv"' >> "$rc_file"
             echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> "$rc_file"
             echo 'eval "$(pyenv init --path)"' >> "$rc_file"
             echo 'eval "$(pyenv virtualenv-init -)"' >> "$rc_file"
-            echo '\n' >> "$rc_file"
           fi
         done
 

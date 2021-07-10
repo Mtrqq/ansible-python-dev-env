@@ -12,8 +12,9 @@
         autoremove: yes
 
     - name: Setup docker service
+      become: yes
       shell: |
-        sudo systemctl enable --now docker
+        systemctl enable --now docker
 
     - name: Allow running as non-root user
       shell: |
