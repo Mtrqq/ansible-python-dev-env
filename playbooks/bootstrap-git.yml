@@ -1,0 +1,14 @@
+---
+- name: Bootstrap git
+  hosts: all
+  tasks:
+    - name: Install Git
+      apt:
+        name:
+        - git
+        state: present
+        autoclean: yes
+        autoremove: yes
+    - name: Configure credentials helper
+      ansible.builtin.shell: |
+        git config --global credentials.helper 'store --file ~/.git-credentials'

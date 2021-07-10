@@ -1,0 +1,8 @@
+---
+- name: Bootstrap VS Code
+  hosts: all
+  tasks:
+  - name: Install VS Code
+    community.general.snap:
+      name: code
+      classic: yes

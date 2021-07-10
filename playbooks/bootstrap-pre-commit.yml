@@ -1,0 +1,7 @@
+---
+- name: Bootstrap pre-commit
+  hosts: all
+  tasks:
+    - name: Install pre-commit
+      ansible.builtin.shell: |
+        curl https://pre-commit.com/install-local.py | python -
