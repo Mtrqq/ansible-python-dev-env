@@ -1,6 +1,5 @@
 install:
-	sudo apt install python3 python3-pip
-	/usr/bin/python3 -m pip install ansible
+	sudo apt install ansible -y
 	ansible-galaxy collection install community.general
 
 playbook:

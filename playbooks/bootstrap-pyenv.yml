@@ -3,6 +3,7 @@
   hosts: all
   tasks:
     - name: Install python build dependencies
+      become: yes
       apt:
         name:
         - build-essential
@@ -42,10 +43,3 @@
           fi
         done
 
-    - name: Install python versions
-      ansible.builtin.shell: |
-        pyenv install {{ item }} --skip-existing
-      with_items:
-        - 3.7.8
-        - 3.8.9
-        - 3.9.4
