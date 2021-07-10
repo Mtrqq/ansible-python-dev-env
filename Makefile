@@ -4,9 +4,10 @@ install:
 	ansible-galaxy collection install community.general
 
 playbook:
-	ansible-playbook ./playbooks/bootstrap-git.yml -i inventory.yml
-	ansible-playbook ./playbooks/bootstrap-pyenv.yml -i inventory.yml
-	ansible-playbook ./playbooks/bootstrap-poetry.yml -i inventory.yml
-	ansible-playbook ./playbooks/bootstrap-pre-commit.yml -i inventory.yml
-	ansible-playbook ./playbooks/bootstrap-docker.yml -i inventory.yml -K
-	ansible-playbook ./playbooks/bootstrap-vs-code.yml -i inventory.yml
+	ansible-playbook ./playbooks/bootstrap-git.yml \
+	./playbooks/bootstrap-pyenv.yml \
+	./playbooks/bootstrap-poetry.yml \
+	./playbooks/bootstrap-pre-commit.yml \
+	./playbooks/bootstrap-docker.yml \
+	./playbooks/bootstrap-vs-code.yml \
+	-i inventory.yml -K

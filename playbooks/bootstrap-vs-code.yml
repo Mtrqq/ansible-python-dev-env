@@ -3,6 +3,7 @@
   hosts: all
   tasks:
   - name: Install VS Code
+    become: yes
     community.general.snap:
       name: code
       classic: yes
