@@ -39,7 +39,7 @@
             echo "#${HEADING}" >> "$rc_file"
             echo 'export PYENV_ROOT="$HOME/.pyenv"' >> "$rc_file"
             echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> "$rc_file"
-            echo 'eval "$(pyenv init --path)"' >> "$rc_file"
+            echo 'eval "$(pyenv init -)"' >> "$rc_file"
             echo 'eval "$(pyenv virtualenv-init -)"' >> "$rc_file"
           fi
         done
